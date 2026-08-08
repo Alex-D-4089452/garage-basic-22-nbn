@@ -1,7 +1,7 @@
 {
-  "projects": {
-    "default": "REPLACE_WITH_FIREBASE_PROJECT_ID"
-  },
-  "targets": {},
-  "etags": {}
+    "projects": {
+        "default": "garage-basic-22-nbn"
+    },
+    "targets": {},
+    "etags": {}
 }
