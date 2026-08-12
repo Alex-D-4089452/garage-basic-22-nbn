@@ -31,6 +31,6 @@ export default function LandingPage() {
                     Create account
                 </Link>
             </div>
-        </main>
+        </main >
     )
 }
