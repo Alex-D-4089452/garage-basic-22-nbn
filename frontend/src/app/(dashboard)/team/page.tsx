@@ -70,16 +70,41 @@ export default async function TeamPage() {
         {TEAM_MEMBERS.map((member) => (
           <article
             key={member.name}
-            className="space-y-3 rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+            className="space-y-3 rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#36449C] text-sm font-semibold text-white">
-              {initials(member.name)}
+            <div className="flex items-center gap-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="3.8em"
+                height="3.8em"
+                viewBox="0 0 200 200"
+              >
+                <circle cx="100" cy="100" r="100" fill="#36449C" stroke="none" stroke-width="2" />
+                <text
+                  x="100"
+                  y="100"
+                  dy="0.05em"
+                  text-anchor="middle"
+                  dominant-baseline="middle"
+                  font-family="sans-serif"
+                  font-size="56"
+                  fill="white"
+                  fontWeight="600"
+                >
+                  {initials(member.name)}
+                </text>
+              </svg>
+              <div className="text-center">
+                <h2 className="font-semibold">{member.name}</h2>
+                <p className="flex w-full items-center justify-center rounded-full bg-[#36449C]/10 px-4 py-0.5 text-xs font-medium text-[#36449C]">
+                  {member.role}
+                </p>
+              </div>
             </div>
-            <div>
-              <h2 className="font-semibold">{member.name}</h2>
-              <p className="text-sm text-zinc-500">{member.role}</p>
-            </div>
-            <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{member.bio}</p>
+            <hr className="border-zinc-200 dark:border-zinc-800" />
+            <p className="text-center text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+              {member.bio}
+            </p>
           </article>
         ))}
       </section>
