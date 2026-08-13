@@ -1,21 +1,12 @@
 @import "tailwindcss";
 
 :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --create-account-button-font-color: #ededed;
-    --auth-container-border-color: #3B3B3B;
-    --auth-container-background-color: #121214;
-}
-
-/* Original light-mode colors */
-/* :root {
     --background: #ffffff;
     --foreground: #171717;
     --create-account-button-font-color: #ffffff;
     --auth-container-border-color: #A9A9A9;
-    --auth-container-background-color: #696969;
-} */
+    --auth-container-background-color: #ffffff;
+}
 
 @theme inline {
     --color-background: var(--background);
@@ -24,7 +15,7 @@
     --font-mono: var(--font-geist-mono);
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root {
         --background: #0a0a0a;
         --foreground: #ededed;
@@ -32,7 +23,7 @@
         --auth-container-border-color: #3B3B3B;
         --auth-container-background-color: #121214;
     }
-} */
+}
 
 body {
     background: var(--background);
@@ -43,7 +34,7 @@ body {
 /* Auth button restyle */
 .auth-button {
     background: #36449C;
-    color: var(--foreground);
+    color: var(--create-account-button-font-color);
 }
 
 /* Auth container restyle */
