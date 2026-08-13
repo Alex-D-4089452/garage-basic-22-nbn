@@ -60,7 +60,9 @@ export default async function TeamPage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title={TEAM_NAME} description="Meet our team" />
+      <div className="mb-1">
+        <PageHeader title={TEAM_NAME} description="Meet our team" />
+      </div>
 
       <section>
         <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{TEAM_BLURB}</p>
