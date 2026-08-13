@@ -10,33 +10,38 @@ interface TeamMember {
   bio: string
 }
 
-const TEAM_BLURB = 'Placeholder blurb'
+const TEAM_NAME = 'Team 22'
+const TEAM_BLURB = (
+  <>
+    NBN — UX Design Practices Using AI — <b>Team 2</b>
+  </>
+)
 
 const TEAM_MEMBERS: TeamMember[] = [
   {
-    name: 'Member 1',
-    role: 'Placeholder role',
-    bio: 'Placeholder bio.',
+    name: 'Hami Faizal',
+    role: 'Project Manager',
+    bio: 'Coordinates times, priorities, and communication to keep the team aligned.',
   },
   {
-    name: 'Member 2',
-    role: 'Placeholder role',
-    bio: 'Placeholder bio.',
+    name: 'Helbert Pemba',
+    role: 'Business Analyst',
+    bio: 'Translates business requirements into clear, actionable specifications for the team.',
   },
   {
-    name: 'Member 3',
-    role: 'Placeholder role',
-    bio: 'Placeholder bio.',
+    name: 'Alex Davidson',
+    role: 'Developer',
+    bio: 'Builds and maintains core features, with a focus on reliability and code quality.',
   },
   {
-    name: 'Member 4',
-    role: 'Placeholder role',
-    bio: 'Placeholder bio.',
+    name: 'Darcy Burke',
+    role: 'Developer',
+    bio: 'Develops complex functionality and helps maintain a clean, well-structured codebase.',
   },
   {
-    name: 'Member 5',
-    role: 'Placeholder role',
-    bio: 'Placeholder bio.',
+    name: 'Sophie Dorland',
+    role: 'UX Designer',
+    bio: 'Designs user flows and prototypes, with a focus on usability research and accessible interfaces.',
   },
 ]
 
@@ -55,7 +60,7 @@ export default async function TeamPage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title="Team" description="Meet the people behind this project" />
+      <PageHeader title={TEAM_NAME} description="Meet our team" />
 
       <section>
         <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{TEAM_BLURB}</p>
