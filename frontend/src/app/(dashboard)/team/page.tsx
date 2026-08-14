@@ -29,7 +29,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: 'Helbert Pemba',
     role: 'Business Analyst',
     bio: 'Translates business requirements into clear, actionable specifications for the team.',
-    image: null,
+    image: 'helbert.jpg',
   },
   {
     name: 'Alex Davidson',
