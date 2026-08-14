@@ -47,7 +47,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: 'Sophie Dorland',
     role: 'UX Designer',
     bio: 'Designs user flows and prototypes, with a focus on usability research and accessible interfaces.',
-    image: 'sophie.jpg',
+    image: null,
   },
 ]
 
@@ -59,6 +59,11 @@ function initials(name: string): string {
     .map((part) => part[0])
     .join('')
     .toUpperCase()
+}
+
+function isLongBio(bio: string): boolean {
+  const LONG_BIO_CHARS = 120
+  return bio.length > LONG_BIO_CHARS
 }
 
 export default async function TeamPage() {
@@ -75,7 +80,7 @@ export default async function TeamPage() {
       </section>
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {TEAM_MEMBERS.map((member) => (
+        {TEAM_MEMBERS.map((member, index) => (
           <article
             key={member.name}
             className="space-y-3 rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
@@ -121,9 +126,31 @@ export default async function TeamPage() {
             </div>
 
             <hr className="border-zinc-200 dark:border-zinc-800" />
-            <p className="text-center text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-              {member.bio}
-            </p>
+
+            {isLongBio(member.bio) ? (
+              <div>
+                <input type="checkbox" id={`bio-${index}`} className="peer sr-only" />
+                <p className="line-clamp-3 text-center text-sm leading-relaxed text-zinc-600 peer-checked:line-clamp-none dark:text-zinc-400">
+                  {member.bio}
+                </p>
+                <label
+                  htmlFor={`bio-${index}`}
+                  className="mt-1.5 block cursor-pointer text-center text-xs font-medium text-[#36449C] peer-checked:hidden hover:underline"
+                >
+                  Read more
+                </label>
+                <label
+                  htmlFor={`bio-${index}`}
+                  className="mt-1.5 hidden cursor-pointer text-center text-xs font-medium text-[#36449C] peer-checked:block hover:underline"
+                >
+                  Read less
+                </label>
+              </div>
+            ) : (
+              <p className="text-center text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                {member.bio}
+              </p>
+            )}
           </article>
         ))}
       </section>
