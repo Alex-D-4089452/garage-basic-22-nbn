@@ -44,7 +44,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     image: 'darcy.jpg',
   },
   {
-    name: 'Sophie Dorland asgihoasg;ha;osdihgapdsihgoa;a sidhgoih[hsadghsgdai',
+    name: 'Sophie Dorland',
     role: 'UX Designer',
     bio: 'Designs user flows and prototypes, with a focus on usability research and accessible interfaces.',
     image: 'sophie.jpg',
