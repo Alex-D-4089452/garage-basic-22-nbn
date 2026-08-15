@@ -61,6 +61,10 @@ function initials(name: string): string {
     .toUpperCase()
 }
 
+function isEmptyBio(bio: string): boolean {
+  return bio === ''
+}
+
 function isLongBio(bio: string): boolean {
   const LONG_BIO_CHARS = 120
   return bio.length > LONG_BIO_CHARS
@@ -127,7 +131,11 @@ export default async function TeamPage() {
 
             <hr className="border-zinc-200 dark:border-zinc-800" />
 
-            {isLongBio(member.bio) ? (
+            {isEmptyBio(member.bio) ? (
+              <p className="text-center text-sm leading-relaxed text-zinc-600 italic dark:text-zinc-400">
+                'provide a bio'
+              </p>
+            ) : isLongBio(member.bio) ? (
               <div>
                 <input type="checkbox" id={`bio-${index}`} className="peer sr-only" />
                 <p className="line-clamp-3 text-center text-sm leading-relaxed text-zinc-600 peer-checked:line-clamp-none dark:text-zinc-400">
