@@ -44,7 +44,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     image: 'darcy.jpg',
   },
   {
-    name: 'Sophie Dorland',
+    name: 'Sophie Dorland asgihoasg;ha;osdihgapdsihgoa;a sidhgoih[hsadghsgdai',
     role: 'UX Designer',
     bio: 'Designs user flows and prototypes, with a focus on usability research and accessible interfaces.',
     image: 'sophie.jpg',
@@ -121,8 +121,11 @@ export default async function TeamPage() {
                   </text>
                 </svg>
               )}
-              <div className="text-center">
-                <h2 className="font-semibold">{member.name}</h2>
+              <div className="group relative min-w-0 flex-1 text-center">
+                <h2 className="cursor-help truncate font-semibold select-none">{member.name}</h2>
+                <div className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 hidden -translate-x-1/2 rounded bg-zinc-900 px-3 py-1.5 text-xs whitespace-nowrap text-white shadow-lg transition-opacity duration-200 group-hover:block after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-zinc-900 after:content-[''] dark:bg-zinc-100 dark:text-zinc-900 dark:after:border-t-zinc-100">
+                  {member.name}
+                </div>
                 <p className="flex w-full items-center justify-center rounded-full bg-[#36449C]/10 px-4 py-0.5 text-xs font-medium text-[#36449C]">
                   {member.role}
                 </p>
