@@ -136,7 +136,7 @@ export default async function TeamPage() {
 
             {isEmptyBio(member.bio) ? (
               <p className="text-center text-sm leading-relaxed text-zinc-600 italic dark:text-zinc-400">
-                'provide a bio'
+                &apos;provide a bio&apos;
               </p>
             ) : isLongBio(member.bio) ? (
               <div>
