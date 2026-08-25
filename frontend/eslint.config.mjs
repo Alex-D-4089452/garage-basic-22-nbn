@@ -2,26 +2,20 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 import nextVitals from 'eslint-config-next/core-web-vitals'
 import nextTs from 'eslint-config-next/typescript'
 
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    '.next/**',
-    'out/**',
-    'build/**',
-    'next-env.d.ts',
-  ]),
-])
+export default defineConfig([
+  // Flat-map the arrays if they aren't natively flat config objects
+  ...(Array.isArray(nextVitals) ? nextVitals : [nextVitals]),
+  ...(Array.isArray(nextTs) ? nextTs : [nextTs]),
 
-export default [
-  eslintConfig,
+  // Override default ignores of eslint-config-next
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
+
+  // Fix the React detection issue directly inside the main config definition
   {
     settings: {
       react: {
-        version: 'detect', // Forces ESLint to look at package.json instead of running the broken code
+        version: 'detect',
       },
     },
   },
-]
+])
